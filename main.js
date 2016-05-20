@@ -212,8 +212,7 @@ User.pushQueryToList = function (obj, byNewest) {
     if(obj) {
 
         for(key in obj) {
-        		if(obj[key])
-            	this.imgRefList.push(obj[key].URL);
+          	this.imgRefList.push(obj[key].URL);
         }
         if(byNewest) {
             this.imgRefList.reverse();
@@ -800,6 +799,7 @@ function starsToButton(){
 }
 
 function draw_memes(){
+		setupData();
     var memeArray = User.curList;
     //var memeArray = new Array(10);
     // var title = ["First Meme", "Second Meme", "Third Meme", "Fourth Meme", "Fifth Meme", "Sixth Meme", "Seventh Meme",
