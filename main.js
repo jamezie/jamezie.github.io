@@ -212,7 +212,8 @@ User.pushQueryToList = function (obj, byNewest) {
     if(obj) {
 
         for(key in obj) {
-            this.imgRefList.push(obj[key].URL);
+        		if(obj[key])
+            	this.imgRefList.push(obj[key].URL);
         }
         if(byNewest) {
             this.imgRefList.reverse();
@@ -276,7 +277,8 @@ User.nextRenderList = function() {
     for(i = capStartPtr; i < (capStartPtr + this.limit); i++){
         url = this.imgRefList[i];
         if(url) {
-            this.dbref.child(this.name + "/" + IMG_DETAILS + "/" + url).once('value', function(snapshot) {
+            this.dbref.child(this.name + "/" + IMG_DETAILS + "/" + url)
+            .once('value', function(snapshot) {
 
                 this.curList.push(snapshot.val());
                 if(counter == max) {
@@ -335,7 +337,6 @@ User.refreshRenderList = function() {
 
     this.nextRenderList();
 }
-
 
 /*
  Clears Render List.
@@ -549,7 +550,6 @@ User.editRating = function(rate,url) {
         },this);
     }
 }
-
 
 // Other Functions
 function replaceBadChars(str){
