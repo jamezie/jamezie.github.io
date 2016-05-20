@@ -799,7 +799,7 @@ function starsToButton(){
 }
 
 function draw_memes(){
-		setupData();
+		User.setupData();
     var memeArray = User.curList;
     //var memeArray = new Array(10);
     // var title = ["First Meme", "Second Meme", "Third Meme", "Fourth Meme", "Fifth Meme", "Sixth Meme", "Seventh Meme",
